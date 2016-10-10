@@ -37,6 +37,21 @@ def is_pair_3(num_lst, target):
             print ("Pair with the given sum is", num_lst[i], "and", temp)
         binmap[num_lst[i]]=1
 
+##SOLUTION 4
+def is_pair(in_lst, target):
+	in_dict={}
+	bool_is_pair=False
+	for i in range(len(in_lst)):
+		in_dict[in_lst[i]]=None
+	i=0
+	while i<=len(in_dict)-1:
+		if (target-list(in_dict.keys())[i]) in in_dict.keys():
+			bool_is_pair=True
+			print(list(in_dict.keys())[i],"and",target-list(in_dict.keys())[i], "Will sum up to", target)
+		i+=1
+	else:
+		return bool_is_pair
+		
 print ("\n---------METHOD 1 -----------------\n")
 start=time.time()	
 print (is_pair_1(num_lst, target), "using method 1..!!")
@@ -52,3 +67,8 @@ start=time.time()
 is_pair_3(num_lst, target)	
 end=time.time()
 print ("Time taken using method 3 is ",end-start)
+print ("\n---------METHOD 4 -----------------\n")
+start=time.time()
+print (is_pair(in_lst, target))
+end=time.time()
+print ("Time taken using method 4 is ",end-start)
