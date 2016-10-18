@@ -12,7 +12,7 @@ result=fib(n);
 printf("The %dth fibonacci element is %d\n",n, result);
 }
 int fib(int n){
-	if (n==1 || n==2)
+	if (n<2)
 	{
 		return 1;
 	}else
